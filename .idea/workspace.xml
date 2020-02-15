@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b6b3e779-609e-4bf4-855d-49b4f25937c7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_15_221204_create_flights_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_15_221204_create_flights_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +133,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1581804172852</updated>
-      <workItem from="1581804175269" duration="1994000" />
+      <workItem from="1581804175269" duration="4334000" />
     </task>
     <servers />
   </component>

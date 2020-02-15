@@ -17,9 +17,9 @@ class CreateFlightsTable extends Migration
             $table->bigIncrements('id');
             $table->string('flightNumber');
             $table->unsignedBigInteger('arrivalAirport_id');
-            $table->integer('arrivalDateTime');
+            $table->dateTime('arrivalDateTime');
             $table->unsignedBigInteger('departureAirport_id');
-            $table->integer('departureDateTime');
+            $table->dateTime('departureDateTime');
             $table->string('status'); //ontime delay
             $table->timestamps();
         });

@@ -175,6 +175,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+
+        App\Providers\V1\FlightServiceProviver::class,
+
+
+
     ],
 
     /*

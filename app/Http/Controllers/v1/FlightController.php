@@ -58,8 +58,11 @@ class FlightController extends Controller
      */
     public function show($id)
     {
+        $parameters = request()->input();
+        $parameters['flightNumber'] = $id;
         //call  service
-        $data  = $this->flights->getFlights($id);
+        //$data  = $this->flights->getFlights($id);
+        $data  = $this->flights->getFlights($parameters);
         return  response()->json($data);
     }
 

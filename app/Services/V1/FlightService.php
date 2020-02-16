@@ -10,7 +10,11 @@ class  FlightService{
         'arrivalAirport'    => 'arrival',  //from flight model
         'departureAirport'  => 'departure'
     ];
-
+    protected   $clauseProperties = [
+        // user key and value 'arrivalDateTime'  => 'arrival.datetime'
+        'status',
+        'FlightNumber',
+    ];
     public  function  getFlights($parameters)
     {
         //check if we have
@@ -18,21 +22,21 @@ class  FlightService{
             return  $this->filterFlights(Flight::all());
         }
 
-        $withKeys =[];
+        //Refactor the code
+        $withKeys = $this->getWithKeys($parameters);
 
-        if (isset( $parameters['include'])){
-            $includeParams = explode(',', $parameters['include']);
-            $includes = array_intersect($this->supportedIncludes, $includeParams);
-            $withKeys = array_keys($includes);
-        }
-        return $this->filterFlights(Flight::with($withKeys)->get(), $withKeys);
+        //from query
+        $whereClauses = $this->getWhereClause($parameters);
+
+        $flights = Flight::with($withKeys)->where($whereClauses)->get();
+        return $this->filterFlights($flights, $withKeys);
         //return Flight::all();
     }
 
-    public  function  getFlight($flightNumber)
-    {
-        return $this->filterFlights(Flight::where('flightNumber',$flightNumber )->get());
-    }
+//    public  function  getFlight($flightNumber)
+//    {
+//        return $this->filterFlights(Flight::where('flightNumber',$flightNumber )->get());
+//    }
 
     protected  function  filterFlights($flights, $keys = [])
     {
@@ -72,5 +76,31 @@ class  FlightService{
         }
 
         return $data;
+    }
+
+    protected  function  getWithKeys($parameters)
+    {
+        $withKeys = [];
+
+        if (isset( $parameters['include'])){
+            $includeParams = explode(',', $parameters['include']);
+            $includes = array_intersect($this->supportedIncludes, $includeParams);
+            $withKeys = array_keys($includes);
+        }
+
+        return $withKeys;
+    }
+
+    protected  function  getWhereClause($parameters)
+    {
+        $clause = [];
+
+        foreach ($this->clauseProperties as $prop) {
+            if (in_array($prop, array_keys($parameters))){
+                //add key
+                $clause[$prop]  = $parameters[$prop];
+            }
+        }
+        return $clause;
     }
 }

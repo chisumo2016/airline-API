@@ -1,3 +1,7 @@
 1 /vi/flights?include=arrival,departure,passengers(information)
   Flightcontroller ->index
   FlightService
+
+2:querying
+ /vi/flights?include=arrival&status=delayed
+ http://airline-api.application/api/v1/flights/JTl36574?include=arrival,departure

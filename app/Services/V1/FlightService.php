@@ -4,7 +4,8 @@ namespace   App\Services\V1;
 
 use App\Airport;
 use App\Flight;
-use Validator;
+use Illuminate\Support\Facades\Validator;
+
 
 class  FlightService{
 

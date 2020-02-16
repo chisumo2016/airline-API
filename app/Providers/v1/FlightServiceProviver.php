@@ -16,9 +16,9 @@ class FlightServiceProviver extends ServiceProvider
      */
     public function register()
     {
-        Validator::extend('flightstatus',  function ($attribute, $value, $parameters, $validator){
-            return $value == 'ontime' || $value == 'delayed';
-        });
+//        Validator::extend('flightstatus',  function ($attribute, $value, $parameters, $validator){
+//            return $value == 'ontime' || $value == 'delayed';
+//        });
     }
 
     /**
@@ -33,3 +33,4 @@ class FlightServiceProviver extends ServiceProvider
         });
     }
 }
+

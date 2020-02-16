@@ -18,4 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 //api/v1/flights
-Route::resource('/v1/flights', "v1\FlightController");
+Route::resource('/v1/flights', "v1\FlightController")->except(['create','edit']);

@@ -5,3 +5,19 @@
 2:querying
  /vi/flights?include=arrival&status=delayed
  http://airline-api.application/api/v1/flights/JTl36574?include=arrival,departure
+
+{
+   "flightNumber" : "JWM12345",
+   "status":"ontime",
+   "arrival":
+   {
+      "datetime":"2020-02-16  16:30:01",
+      "iataCode":"A57",
+   }
+
+   "departure":
+      {
+         "datetime":"2020-02-17  08:30:01",
+         "iataCode":"9C1",
+      }
+}

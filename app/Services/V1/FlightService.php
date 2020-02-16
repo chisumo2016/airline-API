@@ -2,6 +2,7 @@
 
 namespace   App\Services\V1;
 
+use App\Airport;
 use App\Flight;
 
 class  FlightService{
@@ -76,6 +77,34 @@ class  FlightService{
         }
 
         return $data;
+    }
+
+    public  function createFlight($request)
+    {
+        $arrivalAirport     = $request->input('arrival.iataCode');
+        $departureAirport   = $request->input('departure.iataCode');
+
+        $airports = Airport::whereIn('iataCode',[$arrivalAirport ,  $departureAirport ])->get();
+        $codes = [];
+
+        foreach ( $airports as  $port) {
+            $codes[$port->iataCode] = $port->id;
+        }
+
+        $flight = new Flight();
+
+        $flight->flightNumber           = $request->input('flightNumber');
+        $flight->status                 = $request->input('status');
+
+        $flight->arrivalAirport_id      = $codes[$arrivalAirport];
+        $flight->arrivalDateTime        = $request->input('arrival.datetime');
+
+        $flight->departureAirport_id    = $codes[$departureAirport];
+        $flight->departureDateTime      = $request->input('departure.datetime');
+
+        $flight->save();
+
+        return  $this->filterFlights([$flight]);
     }
 
     protected  function  getWithKeys($parameters)

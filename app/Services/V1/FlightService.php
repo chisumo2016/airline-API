@@ -4,6 +4,7 @@ namespace   App\Services\V1;
 
 use App\Airport;
 use App\Flight;
+use Validator;
 
 class  FlightService{
 
@@ -15,6 +16,15 @@ class  FlightService{
         // user key and value 'arrivalDateTime'  => 'arrival.datetime'
         'status',
         'FlightNumber',
+    ];
+
+    protected  $rules =[
+        'flightNumber' => 'required',
+        'status' => 'required|flightstatus',
+        'arrival.datetime' => 'required|date',
+        'arrival.iataCode' => 'required',
+        'departure.datetime' => 'required|date',
+        'departure.iataCode' => 'required',
     ];
     public  function  getFlights($parameters)
     {
@@ -139,6 +149,12 @@ class  FlightService{
         $flight =Flight::where('flightNumber', $flightNumber)->firstOrFail();
         $flight->delete();
 
+    }
+
+    public function  validate($flight)
+    {
+        $validator = Validator::make($flight, $this->rules);
+        $validator->validate();
     }
 
 

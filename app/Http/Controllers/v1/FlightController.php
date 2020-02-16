@@ -40,6 +40,7 @@ class FlightController extends Controller
      */
     public function store(Request $request)
     {
+        $this->flights->validate($request->all());
         //$arrivalDateTime = $request->input(['arrival.datetime']);
         try {
             $flight = $this->flights->createFlight($request);
@@ -77,6 +78,7 @@ class FlightController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->flights->validate($request->all());
         try {
             $flight = $this->flights->updateFlight($request, $id);
 

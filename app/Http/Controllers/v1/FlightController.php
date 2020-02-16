@@ -22,8 +22,9 @@ class FlightController extends Controller
      */
     public function index()
     {
+        $parameters = request()->input();
         //call  service
-        $data  = $this->flights->getFlights();
+        $data  = $this->flights->getFlights($parameters);
         //return data
         return  response()->json($data);
     }

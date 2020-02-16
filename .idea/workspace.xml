@@ -5,7 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/v1/FlightController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/v1/FlightController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Services/V1/FlightService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/V1/FlightService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +134,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1581804172852</updated>
-      <workItem from="1581804175269" duration="8940000" />
+      <workItem from="1581804175269" duration="12706000" />
     </task>
     <servers />
   </component>
@@ -143,6 +142,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="809" y="458" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1581855318583">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="809" y="458" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1600.860@0.0.1600.860" timestamp="1581855318583" />
     <state x="1270" y="345" key="NewPhpFileDialog" timestamp="1581850898112">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

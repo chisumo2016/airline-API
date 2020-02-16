@@ -107,6 +107,41 @@ class  FlightService{
         return  $this->filterFlights([$flight]);
     }
 
+    public  function updateFlight($request, $flightNumber)
+    {
+        $flight =Flight::where('flightNumber', $flightNumber)->firstOrFail();
+        $arrivalAirport     = $request->input('arrival.iataCode');
+        $departureAirport   = $request->input('departure.iataCode');
+
+        $airports = Airport::whereIn('iataCode',[$arrivalAirport ,  $departureAirport ])->get();
+        $codes = [];
+
+        foreach ( $airports as  $port) {
+            $codes[$port->iataCode] = $port->id;
+        }
+
+        $flight->flightNumber           = $request->input('flightNumber');
+        $flight->status                 = $request->input('status');
+
+        $flight->arrivalAirport_id      = $codes[$arrivalAirport];
+        $flight->arrivalDateTime        = $request->input('arrival.datetime');
+
+        $flight->departureAirport_id    = $codes[$departureAirport];
+        $flight->departureDateTime      = $request->input('departure.datetime');
+
+        $flight->save();
+
+        return  $this->filterFlights([$flight]);
+    }
+
+    public  function deleteFlight($flightNumber)
+    {
+        $flight =Flight::where('flightNumber', $flightNumber)->firstOrFail();
+        $flight->delete();
+
+    }
+
+
     protected  function  getWithKeys($parameters)
     {
         $withKeys = [];

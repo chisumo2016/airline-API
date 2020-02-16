@@ -5,8 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/v1/FlightController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/v1/FlightController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Services/V1/FlightService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/V1/FlightService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/V1/Flights" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/V1/Flights" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +135,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1581804172852</updated>
-      <workItem from="1581804175269" duration="22983000" />
+      <workItem from="1581804175269" duration="24175000" />
     </task>
     <servers />
   </component>
